@@ -1,0 +1,8 @@
+{
+	"dependencies": {
+		"Hero": {
+			"github": "mesopelagique/Hero",
+			"version": "latest"
+		}
+	}
+}
