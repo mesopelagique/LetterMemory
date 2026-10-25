@@ -19,37 +19,43 @@ property cards : Integer                    // 16
 property pairs : Integer                    // 8
 
 property lang : Text:="fr"
+property mode : Text:="letter"             // "letter" (A) or "syllable" (ba, che, mo…)
 
-// each item: {emoji; en; fr} — every first letter is a plain A–Z in both languages
+// each item: {emoji; en; fr; enSyl; frSyl} — first letter is a plain A–Z in both
+// languages (letter mode); frSyl/enSyl are the first reading syllable (syllable mode)
 property items : Collection:=[\
-{emoji: "🍌"; en: "banana"; fr: "banane"}; \
-{emoji: "🐶"; en: "dog"; fr: "chien"}; \
-{emoji: "🐱"; en: "cat"; fr: "chat"}; \
-{emoji: "🍎"; en: "apple"; fr: "pomme"}; \
-{emoji: "🐟"; en: "fish"; fr: "poisson"}; \
-{emoji: "🚗"; en: "car"; fr: "voiture"}; \
-{emoji: "🌞"; en: "sun"; fr: "soleil"}; \
-{emoji: "🌙"; en: "moon"; fr: "lune"}; \
-{emoji: "🏠"; en: "house"; fr: "maison"}; \
-{emoji: "🦊"; en: "fox"; fr: "renard"}; \
-{emoji: "🐰"; en: "rabbit"; fr: "lapin"}; \
-{emoji: "🌸"; en: "flower"; fr: "fleur"}; \
-{emoji: "🐍"; en: "snake"; fr: "serpent"}; \
-{emoji: "🍇"; en: "grapes"; fr: "raisin"}; \
-{emoji: "🦁"; en: "lion"; fr: "lion"}; \
-{emoji: "🐸"; en: "frog"; fr: "grenouille"}; \
-{emoji: "🐮"; en: "cow"; fr: "vache"}; \
-{emoji: "🐧"; en: "penguin"; fr: "pingouin"}; \
-{emoji: "🐴"; en: "horse"; fr: "cheval"}; \
-{emoji: "🔑"; en: "key"; fr: "clé"}; \
-{emoji: "📖"; en: "book"; fr: "livre"}; \
-{emoji: "🎩"; en: "hat"; fr: "chapeau"}; \
-{emoji: "🐭"; en: "mouse"; fr: "souris"}; \
-{emoji: "🐢"; en: "turtle"; fr: "tortue"}; \
-{emoji: "🎸"; en: "guitar"; fr: "guitare"}; \
-{emoji: "🍊"; en: "orange"; fr: "orange"}; \
-{emoji: "🐷"; en: "pig"; fr: "cochon"}; \
-{emoji: "🌵"; en: "cactus"; fr: "cactus"}]
+{emoji: "🍌"; en: "banana"; fr: "banane"; enSyl: "ba"; frSyl: "ba"}; \
+{emoji: "🐶"; en: "dog"; fr: "chien"; enSyl: "dog"; frSyl: "chien"}; \
+{emoji: "🐱"; en: "cat"; fr: "chat"; enSyl: "cat"; frSyl: "chat"}; \
+{emoji: "🍎"; en: "apple"; fr: "pomme"; enSyl: "ap"; frSyl: "pom"}; \
+{emoji: "🐟"; en: "fish"; fr: "poisson"; enSyl: "fish"; frSyl: "poi"}; \
+{emoji: "🚗"; en: "car"; fr: "voiture"; enSyl: "car"; frSyl: "voi"}; \
+{emoji: "🌞"; en: "sun"; fr: "soleil"; enSyl: "sun"; frSyl: "so"}; \
+{emoji: "🌙"; en: "moon"; fr: "lune"; enSyl: "moon"; frSyl: "lu"}; \
+{emoji: "🏠"; en: "house"; fr: "maison"; enSyl: "house"; frSyl: "mai"}; \
+{emoji: "🦊"; en: "fox"; fr: "renard"; enSyl: "fox"; frSyl: "re"}; \
+{emoji: "🐰"; en: "rabbit"; fr: "lapin"; enSyl: "rab"; frSyl: "la"}; \
+{emoji: "🌸"; en: "flower"; fr: "fleur"; enSyl: "flo"; frSyl: "fleur"}; \
+{emoji: "🐍"; en: "snake"; fr: "serpent"; enSyl: "snake"; frSyl: "ser"}; \
+{emoji: "🍇"; en: "grapes"; fr: "raisin"; enSyl: "gra"; frSyl: "rai"}; \
+{emoji: "🦁"; en: "lion"; fr: "lion"; enSyl: "li"; frSyl: "li"}; \
+{emoji: "🐸"; en: "frog"; fr: "grenouille"; enSyl: "frog"; frSyl: "gre"}; \
+{emoji: "🐮"; en: "cow"; fr: "vache"; enSyl: "cow"; frSyl: "va"}; \
+{emoji: "🐧"; en: "penguin"; fr: "pingouin"; enSyl: "pen"; frSyl: "pin"}; \
+{emoji: "🐴"; en: "horse"; fr: "cheval"; enSyl: "horse"; frSyl: "che"}; \
+{emoji: "🔑"; en: "key"; fr: "clé"; enSyl: "key"; frSyl: "clé"}; \
+{emoji: "📖"; en: "book"; fr: "livre"; enSyl: "book"; frSyl: "li"}; \
+{emoji: "🎩"; en: "hat"; fr: "chapeau"; enSyl: "hat"; frSyl: "cha"}; \
+{emoji: "🐭"; en: "mouse"; fr: "souris"; enSyl: "mouse"; frSyl: "sou"}; \
+{emoji: "🐢"; en: "turtle"; fr: "tortue"; enSyl: "tur"; frSyl: "tor"}; \
+{emoji: "🎸"; en: "guitar"; fr: "guitare"; enSyl: "gui"; frSyl: "gui"}; \
+{emoji: "🍊"; en: "orange"; fr: "orange"; enSyl: "or"; frSyl: "o"}; \
+{emoji: "🐷"; en: "pig"; fr: "cochon"; enSyl: "pig"; frSyl: "co"}; \
+{emoji: "🌵"; en: "cactus"; fr: "cactus"; enSyl: "cac"; frSyl: "cac"}; \
+{emoji: "🦒"; en: "giraffe"; fr: "girafe"; enSyl: "gi"; frSyl: "gi"}; \
+{emoji: "🍫"; en: "chocolate"; fr: "chocolat"; enSyl: "cho"; frSyl: "cho"}; \
+{emoji: "🦆"; en: "duck"; fr: "canard"; enSyl: "duck"; frSyl: "ca"}; \
+{emoji: "🏍️"; en: "motorbike"; fr: "moto"; enSyl: "mo"; frSyl: "mo"}]
 
 property cardLeft : Collection
 property cardTop : Collection
@@ -84,6 +90,7 @@ Class constructor($transition : cs.hero.ElementTransition)
 	This.cardSize:=cs.hero.ElementState.new("back_1").width
 
 	This._highlightLang(1)
+	This._highlightMode(1)
 	This.reset()
 
 	// === === === === === === === === === === === === === === === === === === === ===
@@ -98,6 +105,18 @@ Function selectLang($i : Integer)
 	This._highlightLang($i)
 	This.reset()
 
+		// === === === === === === === === === === === === === === === === === === === ===
+		// Mode: 1 = Lettre (A) · 2 = Syllabe (ba, che, mo…)
+Function selectMode($i : Integer)
+
+	If ($i=1)
+		This.mode:="letter"
+	Else
+		This.mode:="syllable"
+	End if
+	This._highlightMode($i)
+	This.reset()
+
 	// === === === === === === === === === === === === === === === === === === === ===
 Function reset()
 
@@ -110,8 +129,8 @@ Function reset()
 	var $p : Integer
 	For ($p; 0; This.pairs-1)
 		var $it : Object:=$chosen[$p]
-		$specs.push({pair: $p; text: This._first($it)})     // the letter card
-		$specs.push({pair: $p; text: $it.emoji})            // the picture card
+		$specs.push({pair: $p; text: This._key($it); pic: False})   // the letter/syllable card
+		$specs.push({pair: $p; text: $it.emoji; pic: True})          // the picture card
 	End for
 	$specs:=This._shuffle($specs)
 
@@ -126,6 +145,11 @@ Function reset()
 		This.matched.push(False)
 
 		OBJECT SET TITLE(*; "face_"+String($k+1); $specs[$k].text)
+		If ($specs[$k].pic)
+			OBJECT SET FONT SIZE(*; "face_"+String($k+1); 52)
+		Else
+			OBJECT SET FONT SIZE(*; "face_"+String($k+1); This._keyFont($specs[$k].text))
+		End if
 		This._setBox("face_"+String($k+1); $k)
 		This._setBox("back_"+String($k+1); $k)
 		OBJECT SET VISIBLE(*; "face_"+String($k+1); False)
@@ -279,7 +303,7 @@ Function _deal($n : Integer) : Collection
 	var $out : Collection:=[]
 	var $it : Object
 	For each ($it; $src)
-		var $L : Text:=This._first($it)
+		var $L : Text:=This._key($it)
 		If (($used.indexOf($L)=-1) & ($out.length<$n))
 			$used.push($L)
 			$out.push($it)
@@ -295,6 +319,37 @@ Function _word($item : Object) : Text
 Function _first($item : Object) : Text
 
 	return Uppercase(Substring(This._word($item); 1; 1))
+
+	// The text shown on the non-picture card: a letter, or the first syllable.
+Function _key($item : Object) : Text
+
+	If (This.mode="syllable")
+		return This._syl($item)
+	End if
+	return This._first($item)
+
+Function _syl($item : Object) : Text
+
+	var $f : Text:="frSyl"
+	If (This.lang="en")
+		$f:="enSyl"
+	End if
+	return String($item[$f])
+
+	// Shrink the font so a multi-letter syllable fits the card.
+Function _keyFont($t : Text) : Integer
+
+	var $n : Integer:=Length($t)
+	Case of
+		: ($n<=1)
+			return 52
+		: ($n<=2)
+			return 46
+		: ($n<=4)
+			return 34
+		Else
+			return 26
+	End case
 
 	// --------------------------------------------------------------------------------
 Function _shuffle($c : Collection) : Collection
@@ -352,5 +407,19 @@ Function _highlightLang($sel : Integer)
 		Else
 			OBJECT SET RGB COLORS(*; "langPad_"+String($i); 0x00E4E7EC; 0x00E4E7EC)
 			OBJECT SET RGB COLORS(*; "langLbl_"+String($i); 0x00667085; 0x00E4E7EC)
+		End if
+	End for
+
+	// --------------------------------------------------------------------------------
+Function _highlightMode($sel : Integer)
+
+	var $i : Integer
+	For ($i; 1; 2)
+		If ($i=$sel)
+			OBJECT SET RGB COLORS(*; "modePad_"+String($i); 0x00344054; 0x00344054)
+			OBJECT SET RGB COLORS(*; "modeLbl_"+String($i); 0x00FFFFFF; 0x00344054)
+		Else
+			OBJECT SET RGB COLORS(*; "modePad_"+String($i); 0x00E4E7EC; 0x00E4E7EC)
+			OBJECT SET RGB COLORS(*; "modeLbl_"+String($i); 0x00667085; 0x00E4E7EC)
 		End if
 	End for

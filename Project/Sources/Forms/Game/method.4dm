@@ -40,6 +40,11 @@ Case of
 				Form.game.selectLang(Num(Substring($name; 9)))
 
 				//______________________________________________________
+			: (Position("modeBtn_"; $name)=1)
+
+				Form.game.selectMode(Num(Substring($name; 9)))
+
+				//______________________________________________________
 		End case
 
 		//______________________________________________________

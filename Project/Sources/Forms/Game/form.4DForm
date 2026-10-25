@@ -835,6 +835,82 @@
 					],
 					"fill": "transparent",
 					"borderStyle": "none"
+				},
+				"modePad_1": {
+					"type": "rectangle",
+					"left": 28,
+					"top": 536,
+					"width": 62,
+					"height": 30,
+					"fill": "#E4E7EC",
+					"stroke": "#E4E7EC",
+					"borderRadius": 9
+				},
+				"modeLbl_1": {
+					"type": "text",
+					"text": "Lettre",
+					"left": 28,
+					"top": 536,
+					"width": 62,
+					"height": 30,
+					"fontSize": 13,
+					"fontWeight": "bold",
+					"stroke": "#667085",
+					"textAlign": "center",
+					"verticalAlign": "center"
+				},
+				"modePad_2": {
+					"type": "rectangle",
+					"left": 94,
+					"top": 536,
+					"width": 74,
+					"height": 30,
+					"fill": "#E4E7EC",
+					"stroke": "#E4E7EC",
+					"borderRadius": 9
+				},
+				"modeLbl_2": {
+					"type": "text",
+					"text": "Syllabe",
+					"left": 94,
+					"top": 536,
+					"width": 74,
+					"height": 30,
+					"fontSize": 13,
+					"fontWeight": "bold",
+					"stroke": "#667085",
+					"textAlign": "center",
+					"verticalAlign": "center"
+				},
+				"modeBtn_1": {
+					"type": "button",
+					"text": "",
+					"left": 28,
+					"top": 536,
+					"width": 62,
+					"height": 30,
+					"stroke": "#000000",
+					"focusable": false,
+					"events": [
+						"onClick"
+					],
+					"fill": "transparent",
+					"borderStyle": "none"
+				},
+				"modeBtn_2": {
+					"type": "button",
+					"text": "",
+					"left": 94,
+					"top": 536,
+					"width": 74,
+					"height": 30,
+					"stroke": "#000000",
+					"focusable": false,
+					"events": [
+						"onClick"
+					],
+					"fill": "transparent",
+					"borderStyle": "none"
 				}
 			}
 		}
